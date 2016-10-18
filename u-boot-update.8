@@ -1,0 +1,37 @@
+.TH U\-BOOT\-UPDATE 8 2017\-10\-18 1.00 "u\-boot configuration tool"
+
+.SH NAME
+u\-boot\-update \- program to generate u\-boot menu files
+
+.SH SYNOPSIS
+\fBu\-boot-\update\fR
+
+.SH DESCRIPTION
+u\-boot\-update is a tool used to generate the menu files used by the U\-BOOT bootloader. Options can be configured in /etc/default/u\-boot.
+
+.SH OPTIONS
+.IP "U_BOOT_UPDATE=""\fBtrue\fR|false""" 4
+This variable specifies if u\-boot-\update is allowed to modify the configuration files in /boot/extlinux. Values are either 'true' or 'false', default is 'true'.
+.IP "U_BOOT_ALTERNATIVES=""\fBdefault recovery\fR""" 4
+This variable specifies which entries u\-boot-\update is populating. Values are 'default', 'recovery', 'live', default is 'default recovery'.
+.IP "U_BOOT_DEFAULT=""\fBl0\fR""" 4
+This variable specifies the default entry to boot. The name of an entry consists of two or three characters. Linux kernel images start with the letter 'l', followed by an integer started by '0' for the first kernel version (which is numerically the highest one in case kernel images of more than one linux version are installed) and, optionally, the mode (r for rescue mode, l for live mode). Memdisk entries start with the letter 'm', followed by an integer, no optional modes available. The default is 'l0'.
+.IP "U_BOOT_ENTRIES=""\fBall\fR""" 4
+This variables specifies how many kernel versions should be used to populate the boot configuration. Value is an integer starting with 1, or 'all' to populate for all kernels, default is 'all'.
+.IP "U_BOOT_MENU_LABEL=""\fBDebian GNU/Linux, kernel\fR""" 4
+This variable specifies the text that is used as a description in the boot menu. Value is an arbitrary string. If lsb_release is installed, the distributors id is automatically determined. If lsb_release is not available, it defaults to 'Debian GNU/Linux, kernel'.
+.IP "U_BOOT_PARAMETERS=""\fBro quiet\fR""" 4
+This variable specifies additional boot parameters that are appended to each kernel entry. Value is an arbitrary string, default is 'ro quiet' (except for recovery entries, where quiet is avoided).
+.IP "U_BOOT_ROOT=""\fBroot\fR=\fIDEVICE\fR""" 4
+This variable specifies the root partition. It is automatically extracted from /etc/fstab. U\-BOOT supports both devices and UUIDs.
+.IP "U_BOOT_TIMEOUT=""\fB50\fR"" 4
+This variable specifies the time that U\-BOOT should wait for user input during boot. Values are in decisecond greater than 0 (e.g. '10' for a 1 second timeout), 0 specifies to wait forever. The default is 50.
+
+.SH FILES
+/etc/default/u-boot
+
+.SH HOMEPAGE
+More information about U\-BOOT and the syslinux project can be found at <\fIhttp://syslinux.zytor.com/\fR>.
+
+.PP
+u\-boot-\update and this manual page was written by Daniel Baumann <\fIdaniel.baumann@progress-technologies.net\fR> for extlinux. Riku Voipio <\fIdriku.voipio@linaro.org\fR> resurrected them for u-boot.

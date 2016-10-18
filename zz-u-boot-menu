@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+# Exit if extlinux was removed (!= purged)
+if [ -x /usr/sbin/u-boot-update ]
+then
+	# Update extlinux configuration
+	u-boot-update
+fi
