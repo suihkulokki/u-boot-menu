@@ -176,24 +176,6 @@ label l${_NUMBER}
 
 	fi
 
-	if echo ${U_BOOT_ALTERNATIVES} | grep -q live
-	then
-
-	# Writing live entry
-	_CONFIG="${_CONFIG}
-
-label l${_NUMBER}l
-	menu label ${U_BOOT_MENU_LABEL} ${_VERSION} (live mode)
-	linux ${_BOOT_DIRECTORY}/vmlinuz-${_VERSION}
-	initrd ${_INITRD}
-	fdt ${_FDT}
-	append ${U_BOOT_ROOT} ${U_BOOT_PARAMETERS} boot=live plainroot
-	text help
-   This option boots the system into live mode (non-persistent)
-	endtext"
-
-	fi
-
 	if echo ${U_BOOT_ALTERNATIVES} | grep -q recovery
 	then
 
@@ -206,9 +188,7 @@ label l${_NUMBER}r
 	initrd ${_INITRD}
 	fdt ${_FDT}
 	append ${U_BOOT_ROOT} $(echo ${U_BOOT_PARAMETERS} | sed -e 's| quiet||') systemd.unit=rescue.target
-	text help
-   This option boots the system into recovery mode (rescue target)
-	endtext"
+	"
 
 	fi
 
