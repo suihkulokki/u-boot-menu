@@ -151,13 +151,16 @@ do
 
 	if [ -e /boot/initrd.img-${_VERSION} ]
 	then
-		_INITRD="${_BOOT_DIRECTORY}/initrd.img-${_VERSION}"
+		_INITRD="initrd ${_BOOT_DIRECTORY}/initrd.img-${_VERSION}"
 	else
 		_INITRD=""
 	fi
 	if [ -e /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT} ]
 	then
-		_FDT="/usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT}"
+		_FDT="fdt /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT}"
+	elif [ -d usr/lib/linux-image-${_VERSION}/ ]
+	then
+		_FDT="fdtdir /usr/lib/linux-image-${_VERSION}/"
 	else
 		_FDT=""
 	fi
@@ -171,8 +174,8 @@ do
 label l${_NUMBER}
 	menu label ${U_BOOT_MENU_LABEL} ${_VERSION}
 	linux ${_BOOT_DIRECTORY}/vmlinuz-${_VERSION}
-	initrd ${_INITRD}
-	fdt ${_FDT}
+	${_INITRD}
+	${_FDT}
 	append ${U_BOOT_ROOT} ${U_BOOT_PARAMETERS}"
 
 	fi
@@ -186,8 +189,8 @@ label l${_NUMBER}
 label l${_NUMBER}r
 	menu label ${U_BOOT_MENU_LABEL} ${_VERSION} (rescue target)
 	linux ${_BOOT_DIRECTORY}/vmlinuz-${_VERSION}
-	initrd ${_INITRD}
-	fdt ${_FDT}
+	${_INITRD}
+	${_FDT}
 	append ${U_BOOT_ROOT} $(echo ${U_BOOT_PARAMETERS} | sed -e 's| quiet||') systemd.unit=rescue.target
 	"
 
