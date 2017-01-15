@@ -9,5 +9,5 @@ U_BOOT_MENU_LABEL="Debian GNU/Linux"
 U_BOOT_PARAMETERS="rw rootwait"
 U_BOOT_ROOT=""
 U_BOOT_TIMEOUT="50"
-U_BOOT_FDT="qcom/apq8016-sbc.dtb"
+#U_BOOT_FDT="qcom/apq8016-sbc.dtb"
 

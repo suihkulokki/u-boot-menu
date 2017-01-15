@@ -155,7 +155,7 @@ do
 	else
 		_INITRD=""
 	fi
-	if [ -e /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT} ]
+	if [ -e /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT} ] && [ -n "${U_BOOT_FDT}" ]
 	then
 		_FDT="fdt /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT}"
 	elif [ -d usr/lib/linux-image-${_VERSION}/ ]
