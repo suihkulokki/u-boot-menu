@@ -80,6 +80,7 @@ U_BOOT_DEFAULT="${U_BOOT_DEFAULT:-l0}"
 U_BOOT_ENTRIES="${U_BOOT_ENTRIES:-all}"
 U_BOOT_TIMEOUT="${U_BOOT_TIMEOUT:-50}"
 U_BOOT_MENU_LABEL="Debian GNU/Linux kernel"
+U_BOOT_FDT_DIR="${U_BOOT_FDT_DIR:-/usr/lib/linux-image-}"
 
 # Find parameter for root from fstab
 if [ -z "${U_BOOT_ROOT}" ]
@@ -155,12 +156,12 @@ do
 	else
 		_INITRD=""
 	fi
-	if [ -e /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT} ]
+	if [ -e ${U_BOOT_FDT_DIR}${_VERSION}/${U_BOOT_FDT} ] && [ -n "${U_BOOT_FDT}" ]
 	then
-		_FDT="fdt /usr/lib/linux-image-${_VERSION}/${U_BOOT_FDT}"
-	elif [ -d usr/lib/linux-image-${_VERSION}/ ]
+		_FDT="fdt ${U_BOOT_FDT_DIR}${_VERSION}/${U_BOOT_FDT}"
+	elif [ -d ${U_BOOT_FDT_DIR}${_VERSION}/ ]
 	then
-		_FDT="fdtdir /usr/lib/linux-image-${_VERSION}/"
+		_FDT="fdtdir ${U_BOOT_FDT_DIR}${_VERSION}/"
 	else
 		_FDT=""
 	fi
