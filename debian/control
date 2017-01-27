@@ -1,0 +1,17 @@
+Source: u-boot-menu
+Section: admin
+Priority: optional
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/suihkulokki/u-boot-menu
+Vcs-Browser: https://github.com/suihkulokki/u-boot-menu
+Homepage: https://github.com/suihkulokki/u-boot-menu
+Maintainer: Riku Voipio <riku.voipio@linaro.org>
+Build-Depends: debhelper (>= 10)
+
+Package: u-boot-menu
+Depends: ${misc:Depends}
+Architecture: all
+Description: u-boot menu update
+ Automatically create extlinux-style boot menu for u-boot. Boot menu
+ entries are automatically created for every kernel package when they are
+ installed.

@@ -1,0 +1,4 @@
+zz-u-boot-menu      etc/kernel/postinst.d
+zz-u-boot-menu      etc/kernel/postrm.d
+u-boot-update       usr/sbin
+
