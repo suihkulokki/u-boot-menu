@@ -131,7 +131,7 @@ timeout ${U_BOOT_TIMEOUT}
 "
 
 # Find linux versions
-_VERSIONS="$(cd /boot && ls vmlinuz-* | grep -v .dpkg-tmp | sed -e 's|vmlinuz-||g' | sort -Vr)"
+_VERSIONS="$(linux-version list | linux-version sort --reverse)"
 
 if [ "$(stat --printf %d /)" = "$(stat --printf %d /boot)" ]
 then
