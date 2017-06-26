@@ -1,3 +1,15 @@
+u-boot-menu (2) unstable; urgency=medium
+
+  [ Vagrant Cascadian ]
+  * Use linux-version to list and sort the available versions correctly.
+    closes: #865918
+
+  [ Riku Voipio ]
+  * update manpage
+  * Add linux-base depends since we now use linux-version script
+
+ -- Riku Voipio <riku.voipio@linaro.org>  Mon, 26 Jun 2017 08:54:16 +0300
+
 u-boot-menu (1) unstable; urgency=medium
 
   * Initial release.
