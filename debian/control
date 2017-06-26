@@ -9,7 +9,7 @@ Maintainer: Riku Voipio <riku.voipio@linaro.org>
 Build-Depends: debhelper (>= 10)
 
 Package: u-boot-menu
-Depends: ${misc:Depends}
+Depends: linux-base, ${misc:Depends}
 Architecture: all
 Description: u-boot menu update
  Automatically create extlinux-style boot menu for u-boot. Boot menu
