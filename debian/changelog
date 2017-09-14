@@ -1,3 +1,9 @@
+u-boot-menu (2~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Héctor Orón Martínez <zumbi@debian.org>  Wed, 13 Sep 2017 21:06:26 +0200
+
 u-boot-menu (2) unstable; urgency=medium
 
   [ Vagrant Cascadian ]
