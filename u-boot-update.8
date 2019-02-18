@@ -26,7 +26,7 @@ This variable specifies additional boot parameters that are appended to each ker
 This variable specifies the root partition. It is automatically extracted from /etc/fstab. U\-BOOT supports both devices and UUIDs.
 .IP "U_BOOT_TIMEOUT=""\fB50\fR""" 4
 This variable specifies the time that U\-BOOT should wait for user input during boot. Values are in decisecond greater than 0 (e.g. '10' for a 1 second timeout), 0 specifies to wait forever. The default is 50.
-.IP "U_BOOT_FDT_DIR=""\fB/boot/dtbs\fR""" 4
+.IP "U_BOOT_FDT_DIR=""\fB/dtbs\fR""" 4
 This variable specifies the directory U\-BOOT should look for the flattened device tree binaries. It expects to find <FDT_DIR>/<KERNEL_VERSION>/<FDT>.
 .IP "U_BOOT_FDT=""device-tree.dtb""" 4
 This variable specifies a single device tree binary. Combine with <U_BOOT_FDT_DIR> for an absolute path to a single DTB. Follow the linux kernel source boot/dts directory format for versioned FDT support. Ex. arm: U_BOOT_FDT="<device-tree.dtb>" arm64: U_BOOT_FDT="<manufacturer>/<device-tree.dtb>". Also accepts a non-versioned FDT input. Ex. <U_BOOT_FDT_DIR>/<U_BOOT_DTB>.
