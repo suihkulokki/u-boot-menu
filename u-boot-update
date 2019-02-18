@@ -101,7 +101,7 @@ EOF
 	done < /etc/fstab
 fi
 
-# if not in fsrab, try from current kernel arguments
+# if not in fstab, try from current kernel arguments
 if [ -z "${U_BOOT_ROOT}" ]
 then
 	for param in `cat /proc/cmdline`
