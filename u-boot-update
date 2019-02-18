@@ -156,12 +156,12 @@ do
 	else
 		_INITRD=""
 	fi
-	if [ -e ${U_BOOT_FDT_DIR}${_VERSION}/${U_BOOT_FDT} ] && [ -n "${U_BOOT_FDT}" ]
+	if [ -e ${U_BOOT_FDT_DIR}/${_VERSION}/${U_BOOT_FDT} ] && [ -n "${U_BOOT_FDT}" ]
 	then
-		_FDT="fdt ${U_BOOT_FDT_DIR}${_VERSION}/${U_BOOT_FDT}"
-	elif [ -d ${U_BOOT_FDT_DIR}${_VERSION}/ ]
+		_FDT="fdt ${U_BOOT_FDT_DIR}/${_VERSION}/${U_BOOT_FDT}"
+	elif [ -d ${U_BOOT_FDT_DIR}/${_VERSION}/ ]
 	then
-		_FDT="fdtdir ${U_BOOT_FDT_DIR}${_VERSION}/"
+		_FDT="fdtdir ${U_BOOT_FDT_DIR}/${_VERSION}/"
 	else
 		_FDT=""
 	fi
