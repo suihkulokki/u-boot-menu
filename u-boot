@@ -1,0 +1,4 @@
+#U_BOOT_PARAMETERS="earlycon=uart8250,mmio32,0xff130000 ro rootwait console=tty0 console=ttyS2,1500000n8 panic=5 mitigations=off"
+#U_BOOT_FDT_DIR="dtbs"
+#U_BOOT_FDT="rk3328-roc-cc.dtb"
+#BOOT_DIRECTORY="/boot"
